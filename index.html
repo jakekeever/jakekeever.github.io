@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jacob Keever's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="Website pics/face.jpg" alt="" /></span>
+							<h1 id="title">Jacob Keever</h1>
+							<p>Data Analyst</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">COVID-19 SQL Analysis</span></a></li>
+								<li><a href="#portfolio2" id="portfolio-link"><span class="icon solid fa-th">COVID-19 Tableau Dashboard</span></a></li>
+								<li><a href="#portfolio3" id="portfolio-link"><span class="icon solid fa-th">Data cleaning in Python</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="https://github.com/jakekeever" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jacob-keever-5988b023b/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>Jacob Keever's Personal Projects</strong>.</h2>
+								<p>Proficient in Tableau, Python, SQL, and Excel.</p>
+							</header>
+
+							<footer>
+								<a href="#portfolio" class="button scrolly">View my Portfolio</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>COVID-19 SQL Analysis</h2>
+							</header>
+							<p>In this project my goal was to analyze how COVID was affecting the United States using queries in MySQL Workbench.</p>
+
+							<div class="center">
+								<div class="col-4 col-12-mobile">
+										<img src="Website pics/SARS-CoV-2_without_background.png" width="400" height="400" alt="Image of COVID virus" /></a>
+										<p>The first step in this project is to find out what kind of questions I am going to be asking. In order to keep the project challenging instead of thinking of questions myself I obtained questions from other people. These were the questions that I had to answer:
+										</p>
+										<img src="Website pics/questions.png" alt="Image of questions">
+										<p>So I can see based off these questions that I am going to need 3 types of data: Number of cases of COVID per state, number of vaccinations per state and each of the states populations. Luckily for me the CDC has been tracking COVID cases and vaccinations per state since almost the beginning and makes that data available for everyone to see. So those combined with US state populations obtained from the USDA website is all the data that I will need to answer these questions.</p>
+										<img src="Website pics/sql codel.png" alt="Image of SQL code">
+										<p>Most of these questions were fairly straightforward to answer and also did not have many surprising answers. California had the highest amount of deaths and cases and NYC had the highest death rate. Also COVID was introduced from someone in Washington. The first problem came about halfway through the questions.</p>
+										<p>The data for population of each state did not include most of the non-continental US territories which were included in the covid data. So I had to manually add them in.</p>
+										<img src="Website pics/population.png" alt="Image of manually adding in population data">
+										<p>After manually adding in each of the populations for each year for the US territories I calculated the population for 2022 using the change from 2020 to 2021. I then had to create a new column that read the year from the covid cases table and inserted the correct population back into the covid cases table based on the year that it read.</p>
+										<img src="Website pics/AK.png" alt="Image of Alaska being the highest case state per population">
+										<p>The first interesting result found was that Alaska had the highest amount of cases per population. So now we know that it's not entirely accurate that California and NYC were hit the hardest! This also makes sense since Alaska is much colder than the rest of the US states so citizens stay indoors which increases the rate of infection.</p>
+										<div class="category">
+											<div class="category">
+											<img src="Website pics/percent vaccinated.png" alt="Image of lowest percent vaccinated states">
+											<img src="Website pics/percent dead.png" alt="Image of highest percent of deaths">
+											<img src="Website pics/percent positive.png" alt="Image of highest percent of cases">
+											</div>
+										</div>
+										<p>Some interesting analysis we can get from these next few queries is how vaccinations affected COVID cases and deaths. In this first image we can see the lowest 13 states in terms of what percent of their population is vaccinated. In the next two images we can see the top 13 states in terms of what percent of their population has died from COVID or been infected from COVID. We can clearly see that many of the states from the first list also share a spot on either of the other two lists. This strongly suggests that vaccinations play a major role in stopping both the spread and the lethality of the COVID virus.</p>
+										<img src="Website pics/vacdays.png" alt="Image vaccination days">
+										<p>The last question I had to tackle was the most difficult. Getting the date for the appropriate maximum vaccinations while also grouping by location is not something that can be easily done in SQL. I had to perform an inner join of the table with itself. However the results were rewarding. We can see that most states had their highest vaccination day in April of 2021 however the COVID vaccination was made widely available in March of the same year. I can't help but wonder if most people were skeptical of the vaccine and so they waited a month.</p>
+										<p>You can view the full project on my Github <a href="https://github.com/jakekeever/Covid_SQL_Analysis">here.</a></p>
+								</div>
+							</div>
+
+						</div>
+					</section>
+				<!-- Portfolio2 -->
+					<section id="portfolio2" class="two">
+						<div class="container">
+
+							<header>
+								<h2>COVID-19 Tableau Dashboard</h2>
+							</header>
+							<p>In this project my goal was to create a dashboard in Tableau that anyone could use to look at various data pertaining to the COVID-19 virus.</p>
+
+							<div class="center">
+								<div class="col-4 col-12-mobile">
+									<img src="Website pics/dashboard.png" alt="Image of dashboard">
+									<p>I wanted to keep the same theme as my previous project and also use the same data set that I was familiar with to create my first Tableau dashboard. I also wanted to confirm my findings from the first project.</p>
+									<img src="Website pics/cases.png" alt="Image of graphs">
+									<p>The first data I wanted to visualize were cases, deaths and vaccinations over time in the form of a line graph. My original idea for the dashboard had them overlapping with eachother. But with three graphs, having three different Y-axes made it look extremely messy. Thus I decided to split the graphs. I wanted to make sure I kept their X-axes the same which proved troubling for vaccinations considering there was a whole year with COVID around without them. Once I learned it, however, it was a simple enough fix.</p>
+									<img src="Website pics/map.png" alt="Image of maps">
+									<p>The next part of my dashboard I wanted to work on were the maps. This step wasn't too difficult due to tableau automatically setting most things up for you. The only thing I had trouble with was getting the "heat map" of cases and vaccinations to look nice. Since there are a few outlier states which had a very low amount of cases and a lot of states with a similar, yet high amount of cases; The map looked almost completely red. The solution to this was placing the minimum value higher in order to get more spread.</p>
+									<img src="Website pics/calendar.png" alt="Image of calendar">
+									<p>The last major element to add to the dashboard was the calendar. Since the data is sorted by day then it is obvious that there needs to be a method to filter by day. This element was not as easy to add as the other ones. There is no template to fill out like for the graphs or maps. I had to manually make the squares and tie them to the date.</p>
+									<div class="category">
+										<img src="Website pics/statefil.png" alt="Image of state filter">
+										<img src="Website pics/popfil.png" alt="Image of population filters">
+									</div>
+									<img src="Website pics/casescalc.png" alt="Image of filters">
+									<p>Now the final step: Putting it all together. Placing everything on the dashboard and making it look nice was simple enough. Then I had to set it up so that each element can filter eachother. For filtering by states I decided against making the map the way to go. Since I am including US territories, some states are almost impossible to click/tap on. Thus I went with a drop down menu. Then the final filter I wanted to add was one for population. Raw cases are nice but being able to see the percentage of people affected is better. Thus I added a drop down filter to filter by "per 100,000 people".</p>
+									<p>With this project complete I compared what answers I got in the SQL project on my dashboard and sure enough they line up.</p>
+									<p>If you would like to see the dashboard for yourself you can do so <a href="https://public.tableau.com/app/profile/jake.keever/viz/CovidAnalysis_16554268346370/CovidDashboard">here.</a></p>
+								</div>
+							</div>
+
+						</div>
+					</section>
+				<!-- Portfolio3 -->
+					<section id="portfolio3" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Data cleaning in Python</h2>
+							</header>
+							<p>In this project my goal was to find and clean the messiest dataset that I could using Pandas in Jupyter Notebooks.</p>
+
+							<div class="center">
+								<div class="col-4 col-12-mobile">
+									<img src="Website pics/kaggle.png" alt="Image of Kaggle dataset">
+									<p>The first step in this project was to actually find a messy data set. This turned out to be tougher than I thought it would. I searched far and wide for the absolute messiest dataset that I could. My search finally led me to Kaggle which hosts wide variety of datasets for anyone to use. So I found one perfect for what I needed. A webscrape of about 22,000 job listings from Monster.com.</p>
+									<img src="Website pics/dfinfo.png" alt="Image of df.info">
+									<p>This dataset is an absolute mess. There are job descriptions inside the location column and the salary column. There are locations inside the organization column. Some columns have the same information throught and some have comepletely useless information. There are some salaries listing over $100,000 an hour. These all need to be fixed before any analysis can be performed.</p>
+									<img src="Website pics/jobtypes.png" alt="Image of job types">
+									<p>The first thing I wanted to tackle was the simplest. There are multiple variables being displayed in one column which is an issue in a lot of data sets that I have seen. There are entries for both what job type the position is (i.e. Contractor or Employee) and the type of hours worked (i.e. Part Time or Full Time). Luckily this was one of the columns that was formatted somewhat nicely. So it was a matter of just looking for the right substrings to pull out the correct information.</p>
+									<img src="Website pics/messyloc.png" alt="Image of messy location column">
+									<p>After fixing the easiest column, then comes the hardest one. This column doesn't even look like it has locations in it at all because it is filled with so many job descriptions. The first step to cleaning this column is to start narrowing it down. Any actual locations in the column are less than 50 characters long and the locations that are in the long job descriptions are preceeded by "Location:" so that is where I started from. After pulling each location out of the job descriptions and getting each properly placed location out into a new column it was time to see what actual information I could get out of it. I decided to extract the state and zip code.</p>
+									<img src="Website pics/algo.png" alt="Image of giant algorithm">
+									<p>Extracting the state was a bit tricky because this column had both state names and abbreviations. Looking for the full state name wasn't a problem but looking for the state abbreviations was. I couldn't just look for any substring containing the two capital letters because there are many instances where the job descriptions are type entirely in capitals. So I had to use regex to get two capital letters with a non capital character before and after. </p>
+									<img src="Website pics/states.png" alt="Image of extracted states">
+									<p>After doing this it worked out nicely. Then it was on to the zip codes.</p>
+									<img src="Website pics/zips.png" alt="Image of extracted zips">
+									<p>In a similar fashion to before I used a regex to extract strings of 5 numbers in a row. Using regex was once again required due to the fact that there were full phone numbers in the location column. After getting the states and zip codes out of the location column I had to do the exact same thing to the organization column.</p>
+									<img src="Website pics/messysalary.png" alt="Image of salaries">
+									<p>The last big part of this dataset cleaning was the salary column. This column is completely filled with useless and also incorrect information.</p>
+									<img src="Website pics/yearhoursalary.png" alt="Image of salaries per year and hour">
+									<p>A number in the salary column is useless unless it tells us what that number represents so I extracted every entry that said if it was a yearly or hourly salary. After that I changed every entry that was just obviously incorrect. Every yearly salary under $200 and every hourly salary over $200 were swapped.</p>
+									<img src="Website pics/cleansalary.png" alt="Image of salaries with just numbers">
+									<p>Once all numbers seemed to be correct it was on to getting rid of the fluff. That was just a matter of removing excess characters and getting the raw number. After that I took all hourly salaries and multiplied them by the hours worked from the hours column from earler. If the hours column had a null value then I just assumed full time.</p>
+									<img src="Website pics/finalsheet.png" alt="Image of final sheet">
+									<p>Now the sheet is cleaned and ready for analysis!</p>
+									<p>If you would like to view the full notebook you can do so on my Github <a href="https://github.com/jakekeever/US_Jobs_Data_Cleaning">here.</a></p>
+								</div>
+							</div>
+
+						</div>
+					</section>
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+							<div>
+								<div>
+								<img src="Website pics/me.jpg" width="500" height="400" alt="image of me"/>
+								</div>
+								<div>
+									<p>My name is Jacob Keever. Data analysis and visualization are two things that I have a passion for. Whether it's using spreadsheets to maximize muscle hypertrophy to get the most optimal workouts or it's using visualization tools to get an understanding of the stochastic processes behind the Black-Scholes-Merton model for my undergraduate thesis paper; I have always used data to enhance things that I like to do in life.</p>
+								</div>
+								</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>You can contact me through my email: jacobwolfekeever@gmail.com<br>
+								You can also visit my links here: <a href="https://github.com/jakekeever" target="_blank">Github</a>, <a href="https://www.linkedin.com/in/jacob-keever-5988b023b/" target="_blank">Linkedin</a></p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy;All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
